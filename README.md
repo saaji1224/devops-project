@@ -45,8 +45,32 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 * goto github repo settings --> webhook --> Add webhook --> payload url : jenkins_url/github-webhook/ --> content type: Json --> Add webhook
 * In jenkins job configure -- need to select GitHub webhook trigger for GitSCM polling
 
-
-
+* `cron expression`: * * * * *
+```
+* --> Minute (0–59)
+* --> Hours (0-23)
+* --> Day of Month (1-31)
+* --> Month (1–12)
+* --> Day of Week (0–7)
+sunday - 0
+monday - 1
+tuesday - 2
+wednesday - 3
+thursday - 4
+friday - 5
+saturday - 6
+```
+Jenkisn Trigger Options
+* Trigger builds remotely
+* Build after other projects are built
+* Build periodically
+* GitHub hook trigger for GITScm polling
+* Poll SCM
+```
+We used Trigger remotely (webhooks) for CI builds so that whenever developers pushed code to GitHub, Jenkins triggered immediately.Trigger Remotely is push-based and instant.
+We used Build periodically to run nightly automation tests and generate reports.Build Periodically is purely time-based,Build Periodically uses cron syntax to run a job on a fixed schedule, regardless of whether code changed
+We avoided Poll SCM because webhooks were available, but it can be useful when webhook integration is not possible.
+```
 
 
 
