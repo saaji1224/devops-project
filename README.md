@@ -41,7 +41,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 # jenkins workspace directory
 /var/lib/jenkins/workspace
 ```
-* Webhook configuration: Whenever developer commit and push the changes at that time automatically build the jenkins job.
+* `Webhook configuration`: Whenever developer commit and push the changes at that time automatically build the jenkins job.
 * goto github repo settings --> webhook --> Add webhook --> payload url : jenkins_url/github-webhook/ --> content type: Json --> Add webhook
 * In jenkins job configure -- need to select GitHub webhook trigger for GitSCM polling
 
